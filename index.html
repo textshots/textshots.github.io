@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Textshots – XXL-sized shareable quotes to grow your audience</title>
+  <link rel="icon" href="favicon.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/g/bootstrap@3.3.7(css/bootstrap.min.css),animatecss@3.5.2(animate.css)" />
+  <style type="text/css">
+    body {
+      background: #eee;
+    }
+
+    header .images {
+      position: relative;
+      width: 100%;
+      height: 600px;
+    }
+
+    header .images img {
+      width: 728px;
+      height: 563px;
+      display: inline;
+      position: absolute;
+      left: 50%;
+    }
+
+    header .images img:nth-of-type(1) {
+      margin-left: -728px;
+    }
+
+    header .images img:nth-of-type(2) {
+      top: 40px;
+      margin-left: -364px;
+      z-index: 3;
+    }
+
+    header .images img:nth-of-type(3) {
+      margin-left: 0;
+    }
+
+    .logos img {
+      width: 64px;
+    }
+
+    .fb-like {
+      width: 63px;
+      overflow: hidden;
+    }
+
+    #fb {
+      transform: scale(2);
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+
+</head>
+<body>
+  <header class="jumbotron">
+    <div class="container">
+      <div class="images">
+        <img class="animated fadeInLeft" src="example-wired.png" />
+        <img class="animated fadeInUp" src="example-cnn.png" />
+        <img class="animated fadeInRight" src="example-derstandard.png" />
+      </div>
+
+      <div class="row animated fadeIn">
+        <div class="col-xs-offset-6 col-xs-2">
+          <div id="fb">
+            <div class="fb-like" data-href="https://facebook.com/textshots" data-width="80" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section id="body">
+  </section>
+
+  <div id="fb-root"></div>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/g/jquery@3.1.0,lodash@4.15.0"></script>
+  <script type="text/javascript">
+    // https://www.behance.net/gallery/34559659/Facebook-New-Reactions-FREE-Download
+    var imageUrls= [
+      'https://mir-s3-cdn-cf.behance.net/project_modules/disp/65ea2034559659.56d57de06cea2.gif',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/disp/e4299734559659.56d57de04bda4.gif',
+      'https://upload.wikimedia.org/wikipedia/commons/c/c2/F_icon.svg',
+      'https://upload.wikimedia.org/wikipedia/en/9/9f/Twitter_bird_logo_2012.svg',
+      'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDEyOCAxMjgiIGhlaWdodD0iMTI4cHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMjggMTI4IiB3aWR0aD0iMTI4cHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxjaXJjbGUgY3g9IjY0IiBjeT0iNjQiIGZpbGw9IiNCRDIwMjYiIHI9IjY0Ii8+PGc+PHBhdGggZD0iTTUzLjAxNCwxMDguMzEyYzAuNzc5LTIuOTg4LDMuOTg4LTE1LjE5OSwzLjk4OC0xNS4xOTljMi4wODQsMy45NzMsOC4xNyw3LjM0NiwxNC42NTksNy4zNDYgICBjMTkuMjgsMCwzMy4xNzUtMTcuNzQ0LDMzLjE3NS0zOS43NzNjMC0yMS4xMzEtMTcuMjM5LTM2LjkzNi0zOS40MTktMzYuOTM2Yy0yNy41OTMsMC00Mi4yNTMsMTguNTI2LTQyLjI1MywzOC42OTMgICBjMCw5LjM3Nyw0Ljk5NCwyMS4wNTgsMTIuOTc4LDI0Ljc3NWMxLjIxNSwwLjU2MSwxLjg2MSwwLjMxNiwyLjE0LTAuODU1YzAuMjExLTAuODkxLDEuMjk0LTUuMjM1LDEuNzc1LTcuMjUzICAgYzAuMTU5LTAuNjQ4LDAuMDgxLTEuMTk3LTAuNDQxLTEuODM1Yy0yLjY0LTMuMjAyLTQuNzU3LTkuMDk1LTQuNzU3LTE0LjU5YzAtMTQuMTA1LDEwLjY3Ny0yNy43NTUsMjguODc0LTI3Ljc1NSAgIGMxNS43MTMsMCwyNi43MTIsMTAuNzA3LDI2LjcxMiwyNi4wMTdjMCwxNy4zLTguNzM4LDI5LjI4MS0yMC4xMDgsMjkuMjgxYy02LjI3MywwLTEwLjk3MS01LjE4OC05LjQ2Ny0xMS41NDcgICBjMS44MDQtNy42MDUsNS4yOTUtMTUuODEzLDUuMjk1LTIxLjI5MmMwLTQuOTE2LTIuNjMzLTkuMDA5LTguMDg2LTkuMDA5Yy02LjQyLDAtMTEuNTc1LDYuNjMtMTEuNTc1LDE1LjUzMyAgIGMwLDUuNjU4LDEuOTE1LDkuNDg5LDEuOTE1LDkuNDg5cy02LjMzNiwyNi43OTItNy40OTYsMzEuNzg0Yy0xLjI4OCw1LjUyMy0wLjc0NCwxNC4zNjMtMC4yMjYsMTguMzQzICAgYzAuMDAzLDAuMDI3LDAuMDA3LDAuMDU0LDAuMDExLDAuMDgxYzEuNDE4LDAuNTU1LDIuODU0LDEuMDc2LDQuMzIsMS41M2MwLjAxNC0wLjAyMSwwLjAyNy0wLjA0MiwwLjA0MS0wLjA2MiAgIEM0Ni43ODgsMTIyLjQzOCw1MS41NzEsMTEzLjg3Miw1My4wMTQsMTA4LjMxMnoiIGZpbGw9IiNGRkZGRkYiLz48L2c+PC9zdmc+',
+      'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDEyOCAxMjgiIGhlaWdodD0iMTI4cHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMjggMTI4IiB3aWR0aD0iMTI4cHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnPjxsaW5lYXJHcmFkaWVudCBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KDEgMCAwIC0xIDU5NCA2MzMpIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgaWQ9IlNWR0lEXzFfIiB4MT0iLTU2Ni43MTE0IiB4Mj0iLTQ5My4yODc1IiB5MT0iNTE2LjU2OTMiIHkyPSI2MjEuNDI5NiI+PHN0b3Agb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojRkZCOTAwIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojOTEwMEVCIi8+PC9saW5lYXJHcmFkaWVudD48Y2lyY2xlIGN4PSI2NCIgY3k9IjY0IiBmaWxsPSJ1cmwoI1NWR0lEXzFfKSIgcj0iNjQiLz48L2c+PGc+PGc+PHBhdGggZD0iTTgyLjMzMywxMDRINDUuNjY3QzMzLjcyLDEwNCwyNCw5NC4yODEsMjQsODIuMzMzVjQ1LjY2N0MyNCwzMy43MTksMzMuNzIsMjQsNDUuNjY3LDI0aDM2LjY2NiAgICBDOTQuMjgxLDI0LDEwNCwzMy43MTksMTA0LDQ1LjY2N3YzNi42NjdDMTA0LDk0LjI4MSw5NC4yODEsMTA0LDgyLjMzMywxMDR6IE00NS42NjcsMzAuNjY3Yy04LjI3MSwwLTE1LDYuNzI5LTE1LDE1djM2LjY2NyAgICBjMCw4LjI3MSw2LjcyOSwxNSwxNSwxNWgzNi42NjZjOC4yNzEsMCwxNS02LjcyOSwxNS0xNVY0NS42NjdjMC04LjI3MS02LjcyOS0xNS0xNS0xNUg0NS42Njd6IiBmaWxsPSIjRkZGRkZGIi8+PC9nPjxnPjxwYXRoIGQ9Ik02NCw4NGMtMTEuMDI4LDAtMjAtOC45NzMtMjAtMjBjMC0xMS4wMjksOC45NzItMjAsMjAtMjBzMjAsOC45NzEsMjAsMjBDODQsNzUuMDI3LDc1LjAyOCw4NCw2NCw4NHogICAgIE02NCw1MC42NjdjLTcuMzUyLDAtMTMuMzMzLDUuOTgxLTEzLjMzMywxMy4zMzNjMCw3LjM1Myw1Ljk4MSwxMy4zMzMsMTMuMzMzLDEzLjMzM1M3Ny4zMzMsNzEuMzUzLDc3LjMzMyw2NCAgICBDNzcuMzMzLDU2LjY0OCw3MS4zNTMsNTAuNjY3LDY0LDUwLjY2N3oiIGZpbGw9IiNGRkZGRkYiLz48L2c+PGc+PGNpcmNsZSBjeD0iODUuMjUiIGN5PSI0Mi43NSIgZmlsbD0iI0ZGRkZGRiIgcj0iNC41ODMiLz48L2c+PC9nPjwvc3ZnPg=='
+    ];
+    var animations = 'fadeOutUp'.split(/\s/);
+    function addLikes(){
+      var animation = animations[Math.random()*animations.length | 0];
+      var imageUrl = imageUrls[Math.random()*imageUrls.length|0];
+      var size = 24+64*Math.random()|0;
+      $('<img class="animated ' + animation + '" src="' + imageUrl +'" />').css({
+        position: 'absolute',
+        'z-index': 100,
+        left: (Math.random()*80)+'%',
+        bottom: 20+(Math.random()*20)+'%',
+        width: size+'px',
+        height: size+'px'
+      })
+      .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+        $(this).remove();
+      })
+      .appendTo($('.images'));
+      window.setTimeout(addLikes, Math.random()*1500|0);
+    }
+    window.setTimeout(addLikes,800);
+
+    function loadFacebook(){
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=178194165945854";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    }
+    window.setTimeout(loadFacebook,1000);
+
+  </script>
+
+  <div id="fb-root"></div>
+
+</body>
+</html>
