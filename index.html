@@ -221,6 +221,10 @@
       });
     }
 
+    function identify(userTraits) {
+      analytics.identify(userTraits.id, userTraits);
+    }
+
     window.fbAsyncInit = function(wot){
       FB.init({
         appId   : '178194165945854',
@@ -237,19 +241,17 @@
         }
 
         updateUser(function(userTraits){
-          analytics.identify(userTraits);
-          console.log(userTraits);
+          identify(userTraits);
           _.each(userTraits, function(value, key) {
             $('.'+key).text(value);
           })
           $('#signed-up').removeClass('hide hidden');
         });
-        console.log('yo', response);
       });
 
       $('.btn-facebook').click(function(){
         FB.login(function(response){
-          updateUser(analytics.identify);
+          updateUser(identify);
         }, {scope: 'public_profile,email'});
       })
     };
