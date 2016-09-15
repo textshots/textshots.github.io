@@ -179,7 +179,7 @@
     function animateIcon(imageUrl) {
       var animation = animations[Math.random()*animations.length | 0];
       var size = 24+64*Math.random()|0;
-      $('<img class="animated ' + animation + '" src="' + imageUrl +'" />').css({
+      var element = $('<img class="animated ' + animation + '" src="' + imageUrl +'" />').css({
         position: 'absolute',
         'z-index': 100,
         left: (Math.random()*80)+'%',
@@ -191,6 +191,9 @@
         $(this).remove();
       })
       .appendTo($('.images'));
+      window.setTimeout(function(){
+        element.remove();
+      },2000);
     }
 
     function addLikes(){
