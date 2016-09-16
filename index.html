@@ -242,6 +242,7 @@
 
         updateUser(function(userTraits){
           identify(userTraits);
+          analytics.track('Signed Up');
           _.each(userTraits, function(value, key) {
             $('.'+key).text(value);
           })
