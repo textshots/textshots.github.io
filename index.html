@@ -70,7 +70,7 @@
       margin-right: auto;
     }
 
-    img.animated[src^="https://s3.amazonaws.com/uifaces/"] {
+    img.animated[src^="https://randomuser.me/"] {
       border-radius: 50%;
     }
 
@@ -163,10 +163,10 @@
     var animations = 'fadeOutUp'.split(/\s/);
 
     function setRandomFace(){
-      $.getJSON('https://uifaces.com/api/v1/random')
+      $.getJSON('https://randomuser.me/api/')
       .then(function(body){
         var image = new Image();
-        image.src = body.image_urls.normal;
+        image.src = body.results[0].picture.large;
         image.onload = function(){
           animateIcon(image.src);
           window.setTimeout(setRandomFace,Math.random()*5000|0);
